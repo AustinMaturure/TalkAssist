@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import pause from "./assets/pause.svg";
 import play from "./assets/play.svg";
 import reset from "./assets/reset.svg";
+import next from "./assets/next.svg";
+import prev from "./assets/prev.svg";
 import "./App.css";
 
 function App() {
@@ -9,6 +11,16 @@ function App() {
   const [v, setVerse] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
   const [points, setPoints] = useState([]);
+  const [title, setTitle] = useState(
+    "Enter Title in the box by scrolling down"
+  );
+
+  const formatText = (text) => {
+    let formattedText = text.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
+
+    formattedText = formattedText.replace(/\*(.*?)\*/g, "<i>$1</i>");
+    return formattedText;
+  };
 
   const handleSpeech = () => {
     const speechInput = document.getElementById("speech").value;
@@ -16,7 +28,11 @@ function App() {
     setPoints(newPoints);
   };
 
-  const verses = ["How wonderful ", "A day in your ", "Like a sunS"];
+  const verses = [
+    "84 How lovely your grand tabernacle is, O Jehovah of armies! 2 My whole being yearns, Yes, I am faint with longing, For the courtyards of Jehovah. My heart and my flesh shout joyfully to the living God.3Even the bird finds a home there And the swallow a nest for herself, Where she cares for her young Near your grand altar, O Jehovah of armies, My King and my God!",
+    "84: 10 For a day in your courtyards is better than a thousand anywhere else! I choose to stand at the threshold of the house of my God Rather than to dwell in the tents of wickedness.",
+    "84: 11 For Jehovah God is a sun and a shield; He gives favor and glory. Jehovah will not hold back anything good From those walking in integrity.",
+  ];
 
   const handleVerse = (num) => {
     setVerse(num);
@@ -75,29 +91,27 @@ function App() {
 
   return (
     <>
-      <input
-        type="text"
-        id="speech"
-        placeholder="Type something and use # to separate"
-      />
-      <button onClick={handleSpeech}>Submit</button>
-      <h1 className="talk-title">Talk</h1>
+      <h1 className="talk-title">{title}</h1>
       <div className="main">
         <div className="talk">
           <div className="point">
             <div className="point-text-cnt">
-              <p className="point-text">{points[i]}</p>
+              <p className="point-text">
+                {points[i]
+                  ? points[i]
+                  : "Enter your talk in the input box with thoughts separated by #"}
+              </p>
             </div>
             <div className="point-control">
               <button
                 onClick={() => setIndex(i === 0 ? points.length - 1 : i - 1)}
               >
-                {`<`}
+                <img src={prev} alt="" />
               </button>
               <button
                 onClick={() => setIndex(i === points.length - 1 ? 0 : i + 1)}
               >
-                {`>`}
+                <img src={next} alt="" />
               </button>
             </div>
           </div>
@@ -129,6 +143,16 @@ function App() {
             </div>
           )}
         </div>
+      </div>
+      <div className="talk-data">
+        <input type="text" id="title" placeholder="Enter Title" />
+        <button
+          onClick={() => setTitle(document.getElementById("title").value)}
+        >
+          Submit
+        </button>
+        <input type="text" id="speech" placeholder="Paste Talk Here" />
+        <button onClick={handleSpeech}>Submit</button>
       </div>
     </>
   );

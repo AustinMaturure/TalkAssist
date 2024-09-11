@@ -6,3 +6,10 @@ h1 {
 button {
   border: none;
 }
+b {
+  font-weight: bold;
+}
+
+body {
+  font-family: "Supreme";
+}
