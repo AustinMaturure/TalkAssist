@@ -6,23 +6,15 @@ import "./App.css";
 
 function App() {
   const [i, setIndex] = useState(0);
-  const [v, setVerse] = useState(null); // Store the verse index
-  const [showPopup, setShowPopup] = useState(false); // Track pop-up visibility
+  const [v, setVerse] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
+  const [points, setPoints] = useState([]);
 
-  const points = [
-    `Lorem ipsum dolor sit amet consectetur adipisicing elit. Est non
-              ipsum harum voluptate architecto dicta, fugit atque quam, aliquam
-              molestiae quisquam, odit iusto sapiente eum facilis nostrum ipsam
-              temporibus aperiam!`,
-    `1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est non
-              ipsum harum voluptate architecto dicta, fugit atque quam, aliquam
-              molestiae quisquam, odit iusto sapiente eum facilis nostrum ipsam
-              temporibus aperiam!`,
-    `2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est non
-              ipsum harum voluptate architecto dicta, fugit atque quam, aliquam
-              molestiae quisquam, odit iusto sapiente eum facilis nostrum ipsam
-              temporibus aperiam!`,
-  ];
+  const handleSpeech = () => {
+    const speechInput = document.getElementById("speech").value;
+    const newPoints = speechInput.split("#");
+    setPoints(newPoints);
+  };
 
   const verses = ["How wonderful ", "A day in your ", "Like a sunS"];
 
@@ -83,6 +75,12 @@ function App() {
 
   return (
     <>
+      <input
+        type="text"
+        id="speech"
+        placeholder="Type something and use # to separate"
+      />
+      <button onClick={handleSpeech}>Submit</button>
       <h1 className="talk-title">Talk</h1>
       <div className="main">
         <div className="talk">
