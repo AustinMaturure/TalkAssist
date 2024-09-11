@@ -91,11 +91,10 @@ function App() {
 
   return (
     <>
-      <h1 className="talk-title">{title}</h1>
       <div className="main">
         <div className="talk">
           <div className="point">
-            <div className="point-text-cnt">
+            <div className="point-text-cnt" id="text">
               <p className="point-text">
                 {points[i]
                   ? points[i]
@@ -145,12 +144,6 @@ function App() {
         </div>
       </div>
       <div className="talk-data">
-        <input type="text" id="title" placeholder="Enter Title" />
-        <button
-          onClick={() => setTitle(document.getElementById("title").value)}
-        >
-          Submit
-        </button>
         <input type="text" id="speech" placeholder="Paste Talk Here" />
         <button onClick={handleSpeech}>Submit</button>
       </div>

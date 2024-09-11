@@ -1,10 +1,10 @@
 .main {
-  height: 100svh;
+  height: 100dvh;
 }
 
 .talk {
   display: flex;
-  height: 90%;
+  height: 100%;
   gap: 0.5rem;
 }
 
@@ -76,7 +76,7 @@
   font-size: 1rem;
   color: white;
   font-weight: bold;
-  background-color: #1f1f1f;
+  background-color: #1f1f1feb;
   border-bottom: 2px solid white;
 }
 
@@ -95,6 +95,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  padding: 0.5rem;
   gap: 1rem;
 }
 
@@ -110,6 +111,7 @@
 
 .timer button {
   background-color: transparent;
+  padding: 0px;
 }
 
 .popup {
@@ -139,8 +141,14 @@
 .talk-data {
   display: flex;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .talk-data input {
   padding: 1rem;
+  border-radius: 22px;
+}
+
+.talk-data button {
+  border-radius: 22px;
 }
