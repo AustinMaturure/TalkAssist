@@ -89,6 +89,11 @@ function App() {
     return () => clearInterval(intervalId);
   }, [intervalId]);
 
+  useEffect(() => {
+    const text = document.getElementById("text");
+    text.scrollTop = 0;
+  }, [i]);
+
   return (
     <>
       <div className="main">
@@ -118,8 +123,8 @@ function App() {
           <div className="pop">
             <div className="pop-buttons">
               <button onClick={() => handleVerse(0)}>Psalm 84:1-3</button>
-              <button onClick={() => handleVerse(1)}>Psalm 84:1-3</button>
-              <button onClick={() => handleVerse(2)}>Psalm 84:10</button>
+              <button onClick={() => handleVerse(1)}>Psalm 84:10</button>
+              <button onClick={() => handleVerse(2)}>Psalm 84:11</button>
             </div>
             <div className="timer">
               <h1>{formatTime(time)}</h1>
