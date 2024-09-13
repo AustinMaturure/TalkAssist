@@ -5,6 +5,7 @@ h1 {
 
 button {
   border: none;
+  cursor: pointer;
 }
 b {
   font-weight: bold;
