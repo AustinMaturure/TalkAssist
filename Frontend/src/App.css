@@ -5,7 +5,7 @@
 .talk {
   display: grid;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   grid-template-columns: 80% 20%;
   gap: 0.5rem;
 }
@@ -16,7 +16,7 @@
 }
 
 .point {
-  border-radius: 22px;
+  border-radius: 6px;
   background-color: rgba(240, 240, 240, 0.9);
   padding: 1rem;
   display: flex;
@@ -39,7 +39,7 @@
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background-color: #8ec572e2;
+  background-color: #31603d;
 }
 
 .point-control button img {
@@ -55,29 +55,70 @@
 }
 
 .pop {
-  border-radius: 22px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .pop-buttons {
-  border-radius: 22px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 0.5rem;
+  overflow: hidden;
+}
+
+.pops {
   display: flex;
   flex-direction: column;
 
-  justify-content: center;
   gap: 0.5rem;
 }
 
+.pops-edit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-buttons,
+.control-buttons {
+  display: flex;
+  background-color: #141414;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.edit-buttons button,
+.control-buttons button {
+  background-color: transparent;
+}
+
+.edit-buttons img,
+.control-buttons img {
+  width: 40px;
+  background-color: transparent;
+}
+
+.control-buttons img {
+  filter: invert(1);
+}
+#control-up {
+  transform: rotate(270deg);
+}
+
+#control-down {
+  transform: rotate(270deg);
+}
 .pop-buttons button {
-  padding: 0.9rem;
-  border-radius: 22px;
-  font-size: 1.5rem;
+  background-color: #141414;
+
+  font-size: 1rem;
   color: white;
   font-weight: bold;
-  background-color: #1f1f1feb;
+  padding: 1rem;
+
   border-bottom: 2px solid white;
 }
 
@@ -89,18 +130,19 @@
 }
 
 .timer {
-  background-color: #8ec572e2;
+  background-color: #31603d;
   color: white;
-  border-radius: 22px;
+  border-radius: 6px;
   justify-content: center;
   text-align: center;
   display: flex;
   flex-direction: column;
+  padding: 0.5rem;
 }
 
 .timer h1 {
   margin: 0px;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .timer div {
@@ -153,7 +195,7 @@
 
 .talk-data button {
   border-radius: 22px;
-  background: #8ec572e2;
+  background: #31603d;
   font-size: 1rem;
   font-weight: bold;
   color: white;

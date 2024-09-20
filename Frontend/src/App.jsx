@@ -4,6 +4,9 @@ import play from "./assets/play.svg";
 import reset from "./assets/reset.svg";
 import next from "./assets/next.svg";
 import prev from "./assets/prev.svg";
+import add from "./assets/add.svg";
+import edit from "./assets/edit.svg";
+import remove from "./assets/remove.svg";
 import "./App.css";
 
 function App() {
@@ -121,10 +124,30 @@ function App() {
           </div>
 
           <div className="pop">
-            <div className="pop-buttons">
-              <button onClick={() => handleVerse(0)}>Psalm 84:1-3</button>
-              <button onClick={() => handleVerse(1)}>Psalm 84:10</button>
-              <button onClick={() => handleVerse(2)}>Psalm 84:11</button>
+            <div className="pops">
+              <div className="pop-buttons">
+                <button onClick={() => handleVerse(0)}>Psalm 84:1-3</button>
+                <button onClick={() => handleVerse(1)}>Psalm 84:10</button>
+                <button onClick={() => handleVerse(2)}>Psalm 84:11</button>
+              </div>
+              <div className="pops-edit">
+                <div className="control-buttons">
+                  <button id="control-up">
+                    <img src={next} alt="" />
+                  </button>
+                  <button id="control-down">
+                    <img src={prev} alt="" />
+                  </button>
+                </div>
+                <div className="edit-buttons">
+                  <button>
+                    <img src={edit} alt="" />
+                  </button>
+                  <button>
+                    <img src={add} alt="" />
+                  </button>
+                </div>
+              </div>
             </div>
             <div className="timer">
               <h1>{formatTime(time)}</h1>
