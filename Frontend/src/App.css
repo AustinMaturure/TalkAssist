@@ -188,7 +188,6 @@
 .talk-data {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
 }
 
 .talk-data input {
@@ -204,6 +203,7 @@
   font-size: 1rem;
   font-weight: bold;
   color: white;
+  width: auto;
 }
 
 .add-pop {

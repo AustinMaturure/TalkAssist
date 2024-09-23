@@ -148,6 +148,18 @@ function App() {
                 <img src={next} alt="" />
               </button>
               {points.length > 0 ? i + 1 : 0}/{points.length}
+              {points.length == 0 ? (
+                <div className="talk-data">
+                  <input
+                    type="text"
+                    id="speech"
+                    placeholder="Paste Talk Here"
+                  />
+                  <button onClick={handleSpeech}>Submit</button>
+                </div>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
 
@@ -212,10 +224,6 @@ function App() {
             </div>
           )}
         </div>
-      </div>
-      <div className="talk-data">
-        <input type="text" id="speech" placeholder="Paste Talk Here" />
-        <button onClick={handleSpeech}>Submit</button>
       </div>
     </>
   );
