@@ -51,6 +51,7 @@
 
 .point-control {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -89,7 +90,7 @@
 .edit-buttons,
 .control-buttons {
   display: flex;
-  background-color: #141414;
+  background-color: #1d1c1a;
   padding: 0.5rem;
   border-radius: 6px;
 }
@@ -116,10 +117,10 @@
   transform: rotate(270deg);
 }
 .pop-buttons button {
-  background-color: #141414;
+  background-color: #1d1c1a;
   font-size: 1rem;
   color: white;
-  border-radius: 6px;
+  border-radius: 3px;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: bold;
   padding: 1rem;
@@ -177,9 +178,9 @@
 }
 
 .popup-content {
-  background-color: white;
+  background-color: #fefefe;
   padding: 20px;
-  border-radius: 22px;
+  border-radius: 6px;
   font-size: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -225,9 +226,32 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #31603d;
+  gap: 0.5rem;
+  background-color: #1d1c1a;
   padding: 2rem;
   box-sizing: border-box;
+}
+
+.add-pop {
+  font-family: "Supreme";
+  font-weight: bold;
+}
+
+.add-pop input,
+textarea {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+.add-pop h1 {
+  color: #fefefe;
+}
+
+.add-pop button {
+  background-color: #689a62;
+  color: #fefefe;
+  padding: 1rem;
+  border-radius: 6px;
 }
 
 @media screen and (max-width: 932px) {

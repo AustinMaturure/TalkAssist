@@ -147,6 +147,7 @@ function App() {
               >
                 <img src={next} alt="" />
               </button>
+              {points.length > 0 ? i + 1 : 0}/{points.length}
             </div>
           </div>
 
@@ -195,9 +196,9 @@ function App() {
           {showAddPop && (
             <div className="add-pop">
               <div className="add-pop-content">
-                <p>Pop Text</p>
+                <h1>Pop Text</h1>
                 <input type="text" name="" id="pop-title" />
-                <p>Pop Content</p>
+                <h1>Pop Content</h1>
                 <textarea
                   name=""
                   id="pop-content"

@@ -11,6 +11,14 @@ b {
   font-weight: bold;
 }
 
+input,
+textarea {
+  border: none;
+  outline: none;
+  border-radius: 6px;
+}
+
 body {
-  font-family: "Supreme";
+  font-family: "Supreme", sans-serif;
+  background-color: #f7f7f7;
 }
