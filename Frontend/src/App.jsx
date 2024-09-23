@@ -13,7 +13,13 @@ function App() {
   const [i, setIndex] = useState(0);
   const [v, setVerse] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
+  const [showAddPop, setShowAddPop] = useState(false);
   const [points, setPoints] = useState([]);
+
+  let [popTitle, setPopTitle] = useState("");
+  let [popContent, setPopContent] = useState("");
+  let [verses, setVerses] = useState([]);
+
   const [title, setTitle] = useState(
     "Enter Title in the box by scrolling down"
   );
@@ -31,29 +37,54 @@ function App() {
     setPoints(newPoints);
   };
 
-  const verses = [
-    "84 How lovely your grand tabernacle is, O Jehovah of armies! 2 My whole being yearns, Yes, I am faint with longing, For the courtyards of Jehovah. My heart and my flesh shout joyfully to the living God.3Even the bird finds a home there And the swallow a nest for herself, Where she cares for her young Near your grand altar, O Jehovah of armies, My King and my God!",
-    "84: 10 For a day in your courtyards is better than a thousand anywhere else! I choose to stand at the threshold of the house of my God Rather than to dwell in the tents of wickedness.",
-    "84: 11 For Jehovah God is a sun and a shield; He gives favor and glory. Jehovah will not hold back anything good From those walking in integrity.",
-  ];
-
   const handleVerse = (num) => {
     setVerse(num);
-    setShowPopup(true); // Show the pop-up
+    setShowPopup(true);
   };
 
-  // Close popup when clicking outside
+  const showPop = () => {
+    setShowAddPop(true);
+  };
+
+  const addPop = (title, content) => {
+    const pops = document.getElementById("pop-buttons");
+
+    const newButton = document.createElement("button");
+
+    newButton.innerText = title;
+    setVerses((prevVerses) => {
+      const updatedVerses = [...prevVerses, content];
+      newButton.onclick = () => handleVerse(updatedVerses.length - 1);
+
+      return updatedVerses;
+    });
+
+    pops.appendChild(newButton);
+  };
+
+  const handleAddPop = () => {
+    const title = document.getElementById("pop-title").value;
+    const content = document.getElementById("pop-content").value;
+    setPopTitle(title);
+    setPopContent(content);
+    addPop(title, content);
+  };
+
+  const handleAddClick = () => {
+    handleAddPop();
+    setShowAddPop(false);
+  };
+
   const closePopup = (e) => {
     if (e.target.className === "popup") {
-      setShowPopup(false); // Close popup when clicking outside of the content
+      setShowPopup(false);
     }
   };
 
-  const [time, setTime] = useState(0); // Time in seconds
-  const [isActive, setIsActive] = useState(false); // Track if stopwatch is active
-  const [intervalId, setIntervalId] = useState(null); // Store interval ID
+  const [time, setTime] = useState(0);
+  const [isActive, setIsActive] = useState(false);
+  const [intervalId, setIntervalId] = useState(null);
 
-  // Format the time into mm:ss
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
@@ -62,7 +93,6 @@ function App() {
     ).padStart(2, "0")}`;
   };
 
-  // Start the stopwatch
   const startTimer = () => {
     if (!isActive) {
       setIsActive(true);
@@ -73,7 +103,6 @@ function App() {
     }
   };
 
-  // Stop the stopwatch
   const stopTimer = () => {
     if (isActive) {
       clearInterval(intervalId);
@@ -81,14 +110,12 @@ function App() {
     }
   };
 
-  // Reset the stopwatch
   const resetTimer = () => {
     stopTimer();
     setTime(0);
   };
 
   useEffect(() => {
-    // Clean up the interval on component unmount
     return () => clearInterval(intervalId);
   }, [intervalId]);
 
@@ -124,12 +151,8 @@ function App() {
           </div>
 
           <div className="pop">
-            <div className="pops">
-              <div className="pop-buttons">
-                <button onClick={() => handleVerse(0)}>Psalm 84:1-3</button>
-                <button onClick={() => handleVerse(1)}>Psalm 84:10</button>
-                <button onClick={() => handleVerse(2)}>Psalm 84:11</button>
-              </div>
+            <div className="pops" id="pops">
+              <div className="pop-buttons" id="pop-buttons"></div>
               <div className="pops-edit">
                 <div className="control-buttons">
                   <button id="control-up">
@@ -143,7 +166,7 @@ function App() {
                   <button>
                     <img src={edit} alt="" />
                   </button>
-                  <button>
+                  <button onClick={() => showPop()}>
                     <img src={add} alt="" />
                   </button>
                 </div>
@@ -166,6 +189,24 @@ function App() {
             <div className="popup" onClick={closePopup}>
               <div className="popup-content">
                 <p>{verses[v]}</p>
+              </div>
+            </div>
+          )}
+          {showAddPop && (
+            <div className="add-pop">
+              <div className="add-pop-content">
+                <p>Pop Text</p>
+                <input type="text" name="" id="pop-title" />
+                <p>Pop Content</p>
+                <textarea
+                  name=""
+                  id="pop-content"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+                <button type="submit" onClick={() => handleAddClick()}>
+                  Add
+                </button>
               </div>
             </div>
           )}
