@@ -273,3 +273,24 @@ textarea {
     width: 30px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .talk {
+    display: flex;
+    flex-direction: column;
+  }
+  .point {
+    height: 100dvh;
+  }
+  .pops-edit {
+    flex-direction: row;
+  }
+  .edit-buttons img,
+  .control-buttons img {
+    width: 40px;
+  }
+
+  .main {
+    height: auto;
+  }
+}
