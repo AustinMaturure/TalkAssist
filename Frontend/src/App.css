@@ -85,6 +85,7 @@
 .pops-edit {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .edit-buttons,
@@ -279,6 +280,9 @@ textarea {
     display: flex;
     flex-direction: column;
   }
+  .talk-data {
+    flex-wrap: wrap;
+  }
   .point {
     height: 100dvh;
   }
@@ -292,5 +296,15 @@ textarea {
 
   .main {
     height: auto;
+  }
+}
+
+@media screen and (max-width: 509px) {
+  .point-control {
+    flex-direction: column;
+    align-items: first baseline;
+  }
+  .point-control div {
+    align-items: center;
   }
 }

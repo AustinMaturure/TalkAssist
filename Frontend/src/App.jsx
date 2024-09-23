@@ -137,16 +137,18 @@ function App() {
               </p>
             </div>
             <div className="point-control">
-              <button
-                onClick={() => setIndex(i === 0 ? points.length - 1 : i - 1)}
-              >
-                <img src={prev} alt="" />
-              </button>
-              <button
-                onClick={() => setIndex(i === points.length - 1 ? 0 : i + 1)}
-              >
-                <img src={next} alt="" />
-              </button>
+              <div className="point-buttons">
+                <button
+                  onClick={() => setIndex(i === 0 ? points.length - 1 : i - 1)}
+                >
+                  <img src={prev} alt="" />
+                </button>
+                <button
+                  onClick={() => setIndex(i === points.length - 1 ? 0 : i + 1)}
+                >
+                  <img src={next} alt="" />
+                </button>
+              </div>
               {points.length > 0 ? i + 1 : 0}/{points.length}
               {points.length == 0 ? (
                 <div className="talk-data">
