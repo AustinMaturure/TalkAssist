@@ -210,6 +210,12 @@ function App() {
           {showAddPop && (
             <div className="add-pop">
               <div className="add-pop-content">
+                <button
+                  className="close-pop-up"
+                  onClick={() => setShowAddPop(false)}
+                >
+                  <img src={remove} alt="" />
+                </button>
                 <h1>Pop Text</h1>
                 <input type="text" name="" id="pop-title" />
                 <h1>Pop Content</h1>
