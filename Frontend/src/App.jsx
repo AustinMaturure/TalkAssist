@@ -122,6 +122,8 @@ function App() {
   useEffect(() => {
     const text = document.getElementById("text");
     text.scrollTop = 0;
+    const talk = document.getElementById("talk");
+    talk.scrollTop = 0;
   }, [i]);
 
   const scrollUp = () => {
@@ -136,8 +138,8 @@ function App() {
 
   return (
     <>
-      <div className="main">
-        <div className="talk">
+      <div className="main" id="main">
+        <div className="talk" id="talk">
           <div className="point">
             <div className="point-text-cnt" id="text">
               <p className="point-text">
