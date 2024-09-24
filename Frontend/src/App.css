@@ -7,6 +7,7 @@
   width: 100%;
   height: 100dvh;
   grid-template-columns: 80% 20%;
+  background-color: #f7f7f7;
   gap: 0.5rem;
 }
 
@@ -226,8 +227,8 @@
   box-sizing: border-box;
 }
 
-.add-pop-content {
-  display: flex;
+.add-pop-conten {
+  height: 100svh;
   flex-direction: column;
   justify-content: center;
   border-radius: 6px;

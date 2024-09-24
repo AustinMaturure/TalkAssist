@@ -22,3 +22,8 @@ body {
   font-family: "Supreme", sans-serif;
   background-color: #f7f7f7;
 }
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
