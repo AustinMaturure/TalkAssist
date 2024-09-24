@@ -180,9 +180,10 @@
 }
 
 .popup-content {
-  background-color: #fefefe;
+  background-color: rgba(240, 240, 240, 0.9);
   padding: 20px;
-  border-radius: 6px;
+  border-radius: 3px;
+  max-height: 100%;
   font-size: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -228,8 +229,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 6px;
+  max-height: 100%;
   gap: 0.5rem;
-  background-color: #1d1c1a;
+  background-color: rgba(240, 240, 240, 0.9);
   padding: 2rem;
   position: relative;
   box-sizing: border-box;
@@ -247,7 +250,8 @@ textarea {
 }
 
 .add-pop h1 {
-  color: #fefefe;
+  color: #1d1c1a;
+  font-weight: 500;
 }
 
 .add-pop button {

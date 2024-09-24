@@ -124,6 +124,16 @@ function App() {
     text.scrollTop = 0;
   }, [i]);
 
+  const scrollUp = () => {
+    const popButtons = document.getElementById("pop-buttons");
+    popButtons.scrollTop -= 58;
+  };
+
+  const scrollDown = () => {
+    const popButtons = document.getElementById("pop-buttons");
+    popButtons.scrollTop += 58;
+  };
+
   return (
     <>
       <div className="main">
@@ -170,10 +180,10 @@ function App() {
               <div className="pop-buttons" id="pop-buttons"></div>
               <div className="pops-edit">
                 <div className="control-buttons">
-                  <button id="control-up">
+                  <button id="control-up" onClick={scrollUp}>
                     <img src={next} alt="" />
                   </button>
-                  <button id="control-down">
+                  <button id="control-down" onClick={scrollDown}>
                     <img src={prev} alt="" />
                   </button>
                 </div>
