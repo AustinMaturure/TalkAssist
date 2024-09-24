@@ -64,9 +64,9 @@
 }
 
 .pop-buttons {
-  border-radius: 6px;
   display: flex;
   flex-direction: column;
+  transition: all 2s;
 
   max-height: 100%;
   overflow: auto;
@@ -196,13 +196,13 @@
 
 .talk-data input {
   padding: 1rem;
-  border-radius: 22px;
-  border: 2px solid #1f1f1feb;
+
+  border: none;
   color: #1f1f1feb;
 }
 
 .talk-data button {
-  border-radius: 22px;
+  border-radius: 6px;
   background: #31603d;
   font-size: 1rem;
   font-weight: bold;
@@ -233,7 +233,7 @@
   border-radius: 6px;
   max-height: 100%;
   gap: 0.5rem;
-  background-color: rgba(240, 240, 240, 0.9);
+  background-color: rgb(240, 240, 240);
   padding: 2rem;
   position: relative;
   box-sizing: border-box;
@@ -253,6 +253,7 @@ textarea {
 .add-pop h1 {
   color: #1d1c1a;
   font-weight: 500;
+  font-size: 1.5rem;
 }
 
 .add-pop button {
