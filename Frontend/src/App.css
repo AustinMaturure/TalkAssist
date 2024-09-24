@@ -184,6 +184,7 @@
   padding: 20px;
   border-radius: 3px;
   max-height: 100%;
+  max-width: 100%;
   font-size: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
