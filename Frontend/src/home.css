@@ -2,8 +2,17 @@
   position: sticky;
   top: 0;
   z-index: -1;
+  font-family: "Cabinet Grotesk";
+  background-color: white;
+  padding: 1rem;
+  padding-left: 0.5rem;
 }
 
 .hero-text {
   margin-bottom: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  color: #1d1c1a;
 }

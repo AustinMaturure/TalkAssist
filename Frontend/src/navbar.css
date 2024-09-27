@@ -13,3 +13,7 @@ nav ul {
   justify-content: space-between;
   gap: 15px;
 }
+
+nav ul {
+  cursor: pointer;
+}

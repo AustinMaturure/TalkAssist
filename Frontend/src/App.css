@@ -9,6 +9,8 @@
   grid-template-columns: 80% 20%;
   background-color: #f7f7f7;
   gap: 0.5rem;
+  padding: 0.25rem;
+  box-sizing: border-box;
 }
 
 .talk-title {
