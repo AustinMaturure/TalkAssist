@@ -8,7 +8,7 @@ function Navbar() {
         <nav>
           <ul>
             <li>Account</li>
-            <li>Tutorial</li>
+            <li>Tutorials</li>
             <li>Tool</li>
           </ul>
         </nav>
