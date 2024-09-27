@@ -10,7 +10,7 @@ function Home() {
           <h1>Make Every Talk Effortless,</h1>
           <h1>One Card at a Time</h1>
         </div>
-        <hr />
+        <hr color="#31603d" />
       </section>
     </>
   );
