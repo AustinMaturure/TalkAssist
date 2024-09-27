@@ -56,7 +56,6 @@ function App() {
     console.log(dividedText);
     const newPoints = dividedText.split("#");
     setPoints(newPoints);
-    // Update your UI to display the speech cards based on dividedText
   };
 
   const handleSpeech = () => {
