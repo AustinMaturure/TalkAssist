@@ -31,10 +31,37 @@ function App() {
     return formattedText;
   };
 
+  const divideTextByThoughts = async (text) => {
+    try {
+      const response = await fetch(
+        "http://localhost:8000/text/api/divide-text/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text }),
+        }
+      );
+
+      const data = await response.json();
+      return data.dividedText;
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const handleSubmit = async (text) => {
+    const dividedText = await divideTextByThoughts(text);
+    console.log(dividedText);
+    const newPoints = dividedText.split("#");
+    setPoints(newPoints);
+  };
+
   const handleSpeech = () => {
     const speechInput = document.getElementById("speech").value;
-    const newPoints = speechInput.split("#");
-    setPoints(newPoints);
+
+    handleSubmit(speechInput);
   };
 
   const handleVerse = (num) => {

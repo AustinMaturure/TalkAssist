@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 function Home() {
   return (
     <>
-      <section className="home">
+      <section className="home" id="home">
         <Navbar />
         <div className="hero-text">
           <h1>Make Every Talk Effortless,</h1>

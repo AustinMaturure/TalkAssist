@@ -11,6 +11,8 @@
   gap: 0.5rem;
   padding: 0.25rem;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 .talk-title {

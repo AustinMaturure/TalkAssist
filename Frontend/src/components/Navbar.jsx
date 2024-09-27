@@ -7,9 +7,11 @@ function Navbar() {
         <h1>TalkAssist</h1>
         <nav>
           <ul>
-            <li>Account</li>
+            <li>
+              <a href="#main">Tool</a>
+            </li>
+            <li>About</li>
             <li>Tutorials</li>
-            <li>Tool</li>
           </ul>
         </nav>
       </header>
