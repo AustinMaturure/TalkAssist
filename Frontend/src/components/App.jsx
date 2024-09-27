@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import pause from "./assets/pause.svg";
-import play from "./assets/play.svg";
-import reset from "./assets/reset.svg";
-import next from "./assets/next.svg";
-import prev from "./assets/prev.svg";
-import add from "./assets/add.svg";
-import edit from "./assets/edit.svg";
-import remove from "./assets/remove.svg";
-import "./App.css";
+import pause from "../assets/pause.svg";
+import play from "../assets/play.svg";
+import reset from "../assets/reset.svg";
+import next from "../assets/next.svg";
+import prev from "../assets/prev.svg";
+import add from "../assets/add.svg";
+import edit from "../assets/edit.svg";
+import remove from "../assets/remove.svg";
+import "../css/App.css";
 
 function App() {
   const [i, setIndex] = useState(0);
