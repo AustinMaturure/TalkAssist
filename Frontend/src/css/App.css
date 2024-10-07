@@ -1,5 +1,6 @@
 .main {
   height: 100dvh;
+  z-index: 1;
 }
 
 .talk {
@@ -279,7 +280,7 @@ textarea {
 
   padding: 1rem;
   border-radius: 2px;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .add-pop button:hover {
   background-color: #689a62;
