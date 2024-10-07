@@ -34,7 +34,7 @@ function App() {
   const divideTextByThoughts = async (text) => {
     try {
       const response = await fetch(
-        "http://localhost:8000/text/api/divide-text/",
+        "https://austinmatu.pythonanywhere.com/text/api/divide-text/",
         {
           method: "POST",
           headers: {
