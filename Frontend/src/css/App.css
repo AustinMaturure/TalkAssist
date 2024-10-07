@@ -178,6 +178,7 @@
   display: flex;
   justify-content: center;
   color: black;
+
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
@@ -186,7 +187,9 @@
 }
 
 .popup-content {
-  background-color: rgba(240, 240, 240, 0.9);
+  background-color: #f7f7f7;
+  border-left: 3px solid #689a62;
+  text-align: center;
   padding: 20px;
   border-radius: 3px;
   max-height: 100%;
@@ -229,20 +232,24 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
   padding: 2rem;
+
   box-sizing: border-box;
 }
 
 .add-pop-content {
   height: 100svh;
   display: flex;
+  font-family: "Cabinet Grotesk";
   flex-direction: column;
   justify-content: center;
-  border-radius: 6px;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
   max-height: 100%;
   gap: 0.5rem;
   background-color: rgb(240, 240, 240);
   padding: 2rem;
   position: relative;
+  border-bottom: 3px solid #31603d;
   box-sizing: border-box;
 }
 
@@ -255,21 +262,28 @@
 textarea {
   font-size: 1.2rem;
   padding: 0.5rem;
+  border-radius: 2px;
 }
 
 .add-pop h1 {
   color: #1d1c1a;
-  font-weight: 500;
-  font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 1.6rem;
 }
 
 .add-pop button {
-  background-color: #689a62;
-  color: #fefefe;
+  background-color: #f7f7f7;
+  color: #689a62;
   font-weight: bold;
+  border: 1px solid #689a62;
 
   padding: 1rem;
-  border-radius: 6px;
+  border-radius: 2px;
+  transition: all 1s ease-in-out;
+}
+.add-pop button:hover {
+  background-color: #689a62;
+  color: #f7f7f7;
 }
 
 .close-pop-up img {
@@ -280,6 +294,10 @@ textarea {
   background-color: transparent !important;
   right: 0;
   top: 0px;
+}
+
+.close-pop-up {
+  border: 0px !important;
 }
 @media screen and (max-width: 932px) {
   .pop {

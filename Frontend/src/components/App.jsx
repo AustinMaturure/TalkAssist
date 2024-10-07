@@ -20,10 +20,6 @@ function App() {
   let [popContent, setPopContent] = useState("");
   let [verses, setVerses] = useState([]);
 
-  const [title, setTitle] = useState(
-    "Enter Title in the box by scrolling down"
-  );
-
   const formatText = (text) => {
     let formattedText = text.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
 
@@ -172,7 +168,7 @@ function App() {
               <p className="point-text">
                 {points[i]
                   ? points[i]
-                  : "Enter your talk in the input box with thoughts separated by #"}
+                  : "Enter your talk in the input box to separate thoughts automatically #"}
               </p>
             </div>
             <div className="point-control">
