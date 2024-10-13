@@ -10,8 +10,13 @@ function Navbar() {
             <li>
               <a href="#main">Tool</a>
             </li>
-            <li>About</li>
-            <li>Tutorials</li>
+
+            <li>
+              <a href="#tutorials">Tutorials</a>
+            </li>
+            <li>
+              <a href="#tutorials">Accounts</a>
+            </li>
           </ul>
         </nav>
       </header>
