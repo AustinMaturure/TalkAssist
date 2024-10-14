@@ -3,6 +3,7 @@ header {
   align-items: center;
   justify-content: space-between;
   color: white;
+  padding: 0rem 1rem;
 }
 
 header h1 {

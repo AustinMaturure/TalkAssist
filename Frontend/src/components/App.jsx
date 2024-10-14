@@ -21,9 +21,14 @@ function App() {
   let [verses, setVerses] = useState([]);
 
   const formatText = (text) => {
-    let formattedText = text.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
+    let formattedText = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
 
-    formattedText = formattedText.replace(/\*(.*?)\*/g, "<i>$1</i>");
+    formattedText = formattedText.replace(/__(.*?)__/g, "<u>$1</u>");
+
+    formattedText = formattedText.replace(/_(.*?)_/g, "<em>$1</em>");
+
+    formattedText = formattedText.replace(/~(.*?)~/g, "<strike>$1</strike>");
+
     return formattedText;
   };
 
@@ -166,9 +171,13 @@ function App() {
           <div className="point">
             <div className="point-text-cnt" id="text">
               <p className="point-text">
-                {points[i]
-                  ? points[i]
-                  : "Enter your talk in the input box to separate thoughts automatically #"}
+                {points[i] ? (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: formatText(points[i]) }}
+                  />
+                ) : (
+                  "Enter your talk in the input box to separate thoughts automatically #"
+                )}
               </p>
             </div>
             <div className="point-control">
