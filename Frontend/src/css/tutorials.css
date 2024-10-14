@@ -31,3 +31,8 @@ h2 {
 .tutorials p {
   padding-left: 12px;
 }
+@media screen and (max-width: 768px) {
+  .tutorials {
+    padding: 2rem;
+  }
+}

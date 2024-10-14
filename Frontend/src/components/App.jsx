@@ -30,7 +30,7 @@ function App() {
   const divideTextByThoughts = async (text) => {
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/text/api/divide-text/",
+        `${import.meta.env.VITE_API_URL}text/api/divide-text/`,
         {
           method: "POST",
           headers: {
