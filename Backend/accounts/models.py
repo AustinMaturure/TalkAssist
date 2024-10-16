@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class User(models.Model):
+class UserProfile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE, db_index=True)
+
+
+    def __str__(self):
+        return self.user.username
 

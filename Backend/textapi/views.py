@@ -7,11 +7,6 @@ import re
 
 nlp = spacy.load("en_core_web_sm")
 
-
-
-
-
-
 @csrf_exempt
 def divide_text(request):
     if request.method == 'POST':
