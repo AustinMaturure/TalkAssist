@@ -10,7 +10,7 @@ h2 {
 }
 
 .tutorials h1 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 
 .tutorials p {
@@ -26,6 +26,8 @@ h2 {
 
 .tutorials {
   padding: 3rem;
+
+  row-gap: 1rem;
 }
 
 .tutorials p {

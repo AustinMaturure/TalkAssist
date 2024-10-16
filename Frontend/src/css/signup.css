@@ -1,0 +1,61 @@
+.signup-container {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #31603d;
+  min-width: 20rem;
+  box-shadow: -3px 3px #31603d;
+}
+.signup-text {
+  background-color: white;
+  margin-bottom: 16px;
+  border-radius: 12px;
+}
+.signup-container h1,
+.signup-form p {
+  font-family: "Cabinet Grotesk";
+}
+
+.signup-container h1 {
+  font-size: 2rem;
+  color: #31603d;
+}
+.signup-form p {
+  font-size: 14px;
+}
+
+.signup-form input {
+  font-size: 16px;
+  padding: 0.4rem;
+  margin-bottom: 14px;
+  border: 1px solid #0e150e;
+  margin-top: 2px;
+}
+
+.signup-form button {
+  font-weight: bold;
+
+  background-color: #31603d;
+  color: #f7f7f7;
+  border: 1px solid #f7f7f7;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: all 0.5s ease-in-out;
+}
+.signup-form button:hover {
+  border: 1px solid #0e150e;
+  background-color: #f7f7f7;
+  color: #0e150e;
+}

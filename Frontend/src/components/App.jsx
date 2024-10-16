@@ -35,7 +35,7 @@ function App() {
   const divideTextByThoughts = async (text) => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}text/api/divide-text/`,
+        `${import.meta.env.VITE_API_URL}api/text/divide-text/`,
         {
           method: "POST",
           headers: {
@@ -47,6 +47,27 @@ function App() {
 
       const data = await response.json();
       return data.dividedText;
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const getTalks = async (text) => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}api/talks/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            username: "Austine",
+          },
+          body: JSON.stringify({ text }),
+        }
+      );
+
+      const data = await response.json();
+      return data;
     } catch (error) {
       console.error("Error:", error);
     }
@@ -260,7 +281,7 @@ function App() {
                 >
                   <img src={remove} alt="" />
                 </button>
-                <h1>Pop Text</h1>
+                <h1>Pop Title</h1>
                 <input type="text" name="" id="pop-title" />
                 <h1>Pop Content</h1>
                 <textarea

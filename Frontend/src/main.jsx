@@ -1,17 +1,19 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./components/App.jsx";
-import Tutorial from "./components/Tutorials.jsx";
-import Footer from "./components/Footer.jsx";
+import Layout from "./components/Layout.jsx";
+import SignUp from "./components/SignUp.jsx";
+import Dashboard from "./components/Dashboard.jsx";
 import "./index.css";
-
-import Home from "./components/Home.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Home />
-    <App />
-    <Tutorial />
-    <Footer />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/dashboard/:username" element={<Dashboard />} />
+        <Route path="/" element={<Layout />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 );

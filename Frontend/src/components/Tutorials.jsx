@@ -50,27 +50,37 @@ function Tutorial() {
             </p>
             <ul className="codes">
               <li>
-                <code>**text**</code> - Makes text <strong>bold</strong> for
+                <code>**text**</code> - Makes <strong>text</strong> bold for
                 emphasis.
               </li>
               <li>
-                <code>_text_</code> - <em>Italicizes</em> text for highlighting
+                <code>_text_</code> - Italicizes <em>text</em> for highlighting
                 quotes or thoughts.
               </li>
               <li>
-                <code>__text__</code> - <u>Underlines</u> text for important
+                <code>__text__</code> - Underlines<u> text</u> for important
                 points.
               </li>
 
               <li>
-                <code>~text~</code> - Use single tildes to strike through your
-                text.
+                <code>~text~</code> - Use single tildes to strike through your{" "}
+                <strike>text</strike>.
               </li>
             </ul>
             <p>
               You can add these tags to your speech while submitting it, and
               Talk Assist will format them accordingly.
             </p>
+            <div className="tutorial-step">
+              <h2>Dialogs</h2>
+              <p>
+                If your presentation is a dialog seperate speakers with a colon
+              </p>
+              <ul className="codes">
+                e.g<li> A: How's talk assist? </li>
+                <li>B: Great</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

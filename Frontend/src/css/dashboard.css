@@ -1,0 +1,35 @@
+.dashboard-container {
+  padding: 1rem;
+}
+
+.dashboard-container h1 {
+  font-family: "Cabinet Grotesk";
+}
+
+.dash-placeholder {
+  height: 100svh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1d1c1a;
+  align-items: center;
+  color: white;
+  border-radius: 22px;
+  padding: 1rem;
+}
+
+.dash-first-letter {
+  border-radius: 50%;
+  background-color: #31603d;
+}
+
+.talks-container {
+  display: flex;
+  flex-direction: column;
+}
