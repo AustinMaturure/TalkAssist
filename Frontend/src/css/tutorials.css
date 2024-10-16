@@ -26,6 +26,7 @@ h2 {
 
 .tutorials {
   padding: 3rem;
+  border-top: 2px solid #31603d;
 
   row-gap: 1rem;
 }

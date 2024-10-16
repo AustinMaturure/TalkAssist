@@ -68,6 +68,7 @@
   flex-direction: column;
   justify-content: space-between;
   max-height: 100dvh;
+  padding: 0.5rem;
 
   box-sizing: border-box;
   gap: 0.5rem;
@@ -96,6 +97,7 @@
   display: flex;
   justify-content: center;
   gap: 0.2rem;
+
   max-width: 100%;
 }
 
