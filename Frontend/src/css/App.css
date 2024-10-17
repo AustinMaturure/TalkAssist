@@ -1,5 +1,5 @@
 .main {
-  height: 100svh;
+  height: 100dvh;
   z-index: 1;
   position: sticky;
   top: 0;
@@ -8,7 +8,7 @@
 .talk {
   display: grid;
   width: 100%;
-  height: 100svh;
+  height: 100dvh;
   transition: height 0.5s ease-in-out;
   grid-template-columns: 80% 20%;
   background-color: #f7f7f7;
@@ -337,7 +337,7 @@ textarea {
     flex-wrap: wrap;
   }
   .point {
-    height: 100svh;
+    height: 100dvh;
   }
   .pops-edit {
     flex-direction: row;
@@ -348,6 +348,9 @@ textarea {
   }
 
   .main {
+    height: 100dvh;
+  }
+  .timer h1 {
     height: auto;
   }
 }
