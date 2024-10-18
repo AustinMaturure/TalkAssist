@@ -44,15 +44,31 @@ INSTALLED_APPS = [
     'talks',
     'corsheaders',
     'rest_framework',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'rest_framework_simplejwt.token_blacklist'
 ]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173", 
-    "https://talkassist.netlify.app/"
+    "https://talkassist.netlify.app"
 ]
 CORS_ALLOW_HEADERS = list(default_headers) + [
     'username',
+    'access_token'
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
