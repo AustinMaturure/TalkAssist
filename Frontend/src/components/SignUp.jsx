@@ -18,7 +18,6 @@ export default function SignUp() {
         const timeDifference = currentTime - parseInt(loginTime, 10);
 
         if (timeDifference > 1800000) {
-          localStorage.removeItem("user");
           localStorage.removeItem("loginTime");
           navigate("/login");
         } else {
