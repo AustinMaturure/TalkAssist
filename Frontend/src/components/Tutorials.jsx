@@ -1,8 +1,12 @@
 import "../css/tutorials.css";
+import Footer from "./Footer.jsx";
+import Navbar from "./Navbar.jsx";
+import Home from "./Home.jsx";
 
 function Tutorial() {
   return (
     <>
+      <Home />
       <div className="tutorial-container" id="tutorials">
         <div className="tutorials">
           <h1>Learn how to get the best out of Talk Assist</h1>
@@ -83,7 +87,8 @@ function Tutorial() {
             </div>
           </div>
         </div>
-      </div>
+      </div>{" "}
+      <Footer />
     </>
   );
 }

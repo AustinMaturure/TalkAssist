@@ -9,11 +9,11 @@ function Navbar() {
         <nav>
           <ul>
             <li>
-              <a href="#main">Tool</a>
+              <a href="/#main">Tool</a>
             </li>
 
             <li>
-              <a href="#tutorials">Tutorials</a>
+              <Link to="tutorials/">Tutorials</Link>
             </li>
             <li>
               <a href="">
