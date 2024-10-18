@@ -2,27 +2,6 @@ import "../css/navbar.css";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const getTalks = async (text) => {
-    try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}api/talks/`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            username: "Austine",
-          },
-        }
-      );
-
-      const data = await response.json();
-      console.log(data);
-      return data;
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-  getTalks();
   return (
     <>
       <header>

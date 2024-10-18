@@ -227,7 +227,8 @@
   width: auto;
 }
 
-.add-pop {
+.add-pop,
+.addtitle {
   position: fixed;
   top: 0;
   left: 0;
@@ -244,6 +245,35 @@
   box-sizing: border-box;
 }
 
+.add-title-content {
+  background-color: white;
+  color: #1d1c1a;
+  padding: 1rem;
+  font-family: "Cabinet Grotesk";
+}
+
+.add-title-input {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.add-title-input input {
+  border-bottom: 3px solid #31603d;
+  border-radius: 0;
+}
+.add-title-input button {
+  background-color: #31603d;
+  color: white;
+  border: 1px solid #31603d;
+  padding: 0.5rem;
+  transition: all 0.5s;
+}
+
+.add-title-input button:hover {
+  color: #31603d;
+  background-color: #f7f7f7;
+}
 .add-pop-content {
   height: 100svh;
   display: flex;
@@ -302,6 +332,13 @@ textarea {
   background-color: transparent !important;
   right: 0;
   top: 0px;
+}
+
+.btn-save {
+  color: white;
+
+  border-radius: 6px !important;
+  font-weight: bold;
 }
 
 .close-pop-up {

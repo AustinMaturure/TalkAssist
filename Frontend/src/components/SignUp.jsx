@@ -1,11 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../css/signup.css";
+import { Link, useNavigate } from "react-router-dom";
 export default function SignUp() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
 
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      const loginTime = localStorage.getItem("loginTime");
+      if (loginTime) {
+        const currentTime = Date.now();
+        const timeDifference = currentTime - parseInt(loginTime, 10);
+
+        if (timeDifference > 1800000) {
+          localStorage.removeItem("user");
+          localStorage.removeItem("loginTime");
+          navigate("/login");
+        } else {
+          navigate(`/dashboard/${user.username}`, { state: user });
+        }
+      }
+    }
+  }, []);
   const usersignup = async (data) => {
     try {
       const response = await fetch(
@@ -84,6 +105,9 @@ export default function SignUp() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
           <button type="submit">Sign Up</button>
+          <p>
+            Already Have an Account? <Link to="/login">Login</Link>
+          </p>
         </form>
       </section>
     </>

@@ -18,6 +18,9 @@ button {
 b {
   font-weight: bold;
 }
+input {
+  font-size: 16px;
+}
 
 input,
 textarea {

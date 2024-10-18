@@ -6,6 +6,7 @@ import next from "../assets/next.svg";
 import prev from "../assets/prev.svg";
 import add from "../assets/add.svg";
 import edit from "../assets/edit.svg";
+import clear from "../assets/clear.svg";
 import remove from "../assets/remove.svg";
 import "../css/App.css";
 
@@ -14,11 +15,22 @@ function App() {
   const [v, setVerse] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
   const [showAddPop, setShowAddPop] = useState(false);
+  const [showAddTitle, setShowAddTitle] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [points, setPoints] = useState([]);
 
   let [popTitle, setPopTitle] = useState("");
+  let [talkTitle, setTalkTitle] = useState("");
   let [popContent, setPopContent] = useState("");
   let [verses, setVerses] = useState([]);
+
+  useEffect(() => {
+    if (localStorage.getItem("talk")) {
+      let talk = JSON.parse(localStorage.getItem("talk"));
+      setPoints(talk.text);
+      handleSubmit(talk.text);
+    }
+  }, []);
 
   const formatText = (text) => {
     let formattedText = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
@@ -52,38 +64,52 @@ function App() {
     }
   };
 
-  const getTalks = async (text) => {
-    try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}api/talks/`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            username: "Austine",
-          },
-          body: JSON.stringify({ text }),
-        }
-      );
-
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
   const handleSubmit = async (text) => {
+    setSubmitted(true);
     const dividedText = await divideTextByThoughts(text);
     console.log(dividedText);
     const newPoints = dividedText.split("#");
     setPoints(newPoints);
   };
 
+  const handleAddTalk = async (title) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
+    let text = points.join(" ");
+    let talk = {
+      title,
+      text,
+    };
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}api/talks/add/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.access}`,
+          },
+          body: JSON.stringify(talk),
+        }
+      );
+
+      const data = await response.json();
+      return data.dividedText;
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   const handleSpeech = () => {
     const speechInput = document.getElementById("speech").value;
 
     handleSubmit(speechInput);
+  };
+
+  const handleClear = () => {
+    localStorage.removeItem("talk");
+    setPoints([]);
+    setSubmitted(false);
   };
 
   const handleVerse = (num) => {
@@ -124,9 +150,19 @@ function App() {
     setShowAddPop(false);
   };
 
+  const handleSave = () => {
+    setShowAddTitle(true);
+  };
+
   const closePopup = (e) => {
     if (e.target.className === "popup") {
       setShowPopup(false);
+    }
+  };
+
+  const closeAddTitle = (e) => {
+    if (e.target.className === "addtitle") {
+      setShowAddTitle(false);
     }
   };
 
@@ -226,6 +262,16 @@ function App() {
                 </div>
               ) : (
                 <></>
+              )}{" "}
+              {submitted && (
+                <>
+                  <button className="btn-save" onClick={handleSave}>
+                    Save
+                  </button>
+                  <button className="btn-save" onClick={handleClear}>
+                    <img src={clear} alt="" />
+                  </button>
+                </>
               )}
             </div>
           </div>
@@ -293,6 +339,24 @@ function App() {
                 <button type="submit" onClick={() => handleAddClick()}>
                   Add
                 </button>
+              </div>
+            </div>
+          )}
+          {showAddTitle && (
+            <div className="addtitle" onClick={closeAddTitle}>
+              <div className="add-title-content">
+                <h1>Enter your Talk Title</h1>
+                <div className="add-title-input">
+                  <input type="text" placeholder="title" id="title" />
+                  <button
+                    type="submit"
+                    onClick={() =>
+                      handleAddTalk(document.getElementById("title").value)
+                    }
+                  >
+                    Add
+                  </button>
+                </div>
               </div>
             </div>
           )}

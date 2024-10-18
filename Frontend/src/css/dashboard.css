@@ -1,5 +1,7 @@
 .dashboard-container {
   padding: 1rem;
+  background-color: rgb(243, 243, 243);
+  min-height: 100svh;
 }
 
 .dashboard-container h1 {
@@ -32,4 +34,31 @@
 .talks-container {
   display: flex;
   flex-direction: column;
+}
+.talks-container h1 {
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+.talks {
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+  border-radius: 22px;
+}
+
+.saved-talk {
+  padding: 1rem;
+  transition: background-color 0.5s;
+  border-radius: 22px;
+  cursor: pointer;
+}
+
+.saved-talk:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.saved-talk h2 {
+  margin: 0px;
 }
