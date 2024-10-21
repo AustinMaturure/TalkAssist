@@ -40,7 +40,8 @@
   text-decoration: underline 1px solid black;
 }
 
-.signup-form input {
+.signup-form input,
+.p-accept {
   font-size: 16px;
   padding: 0.4rem;
   margin-bottom: 14px;
@@ -62,4 +63,14 @@
   border: 1px solid #0e150e;
   background-color: #f7f7f7;
   color: #0e150e;
+}
+.p-error {
+  color: rgb(200, 49, 49);
+  border-color: rgb(200, 49, 49) !important;
+}
+
+.log-message {
+  color: rgb(200, 49, 49);
+  max-width: 100%;
+  margin-bottom: 16px;
 }

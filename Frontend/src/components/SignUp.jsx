@@ -6,6 +6,9 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+
   const navigate = useNavigate();
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -53,10 +56,35 @@ export default function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (username.trim() === "") {
+      setError("p-error");
+      setMessage("Username cannot be empty.");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("p-error");
+      setMessage("Password must be at least 6 characters long.");
+      return;
+    }
 
     if (password !== confirmPassword) {
-      console.error("Passwords do not match");
+      setError("p-error");
+      setMessage("Passwords do not match.");
       return;
+    } else {
+      setError("p-accept");
+    }
+
+    const isValidEmail = emailRegex.test(email);
+
+    if (!isValidEmail) {
+      setError("p-email-error");
+      setMessage("Please Enter a Valid e-mail adress.");
+    } else {
+      setError("p-accept");
     }
 
     const data = {
@@ -74,6 +102,9 @@ export default function SignUp() {
           <div className="signup-text">
             <h1>Sign Up</h1>
             <p>And Keep all your talks organised</p>
+          </div>
+          <div className="log-message-cnt">
+            <p className="log-message">{message}</p>
           </div>
           <p>Enter Your Name</p>
           <input
@@ -96,12 +127,13 @@ export default function SignUp() {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <p>Enter Password Again</p>
+          <p className={` ${error}`}>Enter Password Again</p>
           <input
             type="password"
             value={confirmPassword}
             placeholder="Password again"
             onChange={(e) => setConfirmPassword(e.target.value)}
+            className={`password-cnfrm-inp ${error}`}
           />
           <button type="submit">Sign Up</button>
           <p>

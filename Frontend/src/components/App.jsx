@@ -264,14 +264,14 @@ function App() {
                 <></>
               )}{" "}
               {submitted && (
-                <>
+                <div className="util-btns">
                   <button className="btn-save" onClick={handleSave}>
                     Save
                   </button>
-                  <button className="btn-save" onClick={handleClear}>
+                  <button className="btn-refresh" onClick={handleClear}>
                     <img src={clear} alt="" />
                   </button>
-                </>
+                </div>
               )}
             </div>
           </div>

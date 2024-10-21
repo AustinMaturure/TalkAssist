@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 export default function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const userlogin = async (data) => {
@@ -28,6 +30,12 @@ export default function SignUp() {
         localStorage.setItem("loginTime", Date.now());
         navigate(`/dashboard/${userData.username}`, { state: userData });
       } else {
+        if (response.status == 401) {
+          setError("p-error");
+          setMessage("Credentials Incorrect. Check Username or Password");
+        } else {
+          setError("p-accept");
+        }
         console.error("Error: Server responded with status", response.status);
       }
     } catch (error) {
@@ -52,12 +60,19 @@ export default function SignUp() {
             <h1>Log in</h1>
             <p>View, Add all your Talks</p>
           </div>
+          <div className="log-message-cnt">
+            <p className="log-message">{message}</p>
+          </div>
           <p>Enter Your Name</p>
           <input
             type="text"
             value={username}
             placeholder="Name"
-            onChange={(e) => setUsername(e.target.value)}
+            className={`username-ipt ${error}`}
+            onChange={(e) => {
+              setUsername(e.target.value);
+              setError("p-accept");
+            }}
           />
 
           <p>Enter Password</p>
@@ -65,7 +80,11 @@ export default function SignUp() {
             type="password"
             value={password}
             placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
+            className={`password-ipt ${error}`}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setError("p-accept");
+            }}
           />
 
           <button type="submit">Log In</button>

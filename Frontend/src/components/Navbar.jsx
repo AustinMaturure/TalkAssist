@@ -13,11 +13,11 @@ function Navbar() {
             </li>
 
             <li>
-              <Link to="tutorials/">Tutorials</Link>
+              <Link to="/tutorials/">Tutorials</Link>
             </li>
             <li>
               <a href="">
-                <Link to="signup/">Accounts</Link>
+                <Link to="/signup/">Accounts</Link>
               </a>
             </li>
           </ul>

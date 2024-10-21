@@ -334,11 +334,23 @@ textarea {
   top: 0px;
 }
 
+.util-btns {
+  display: flex;
+  gap: 1rem;
+}
+
 .btn-save {
   color: white;
 
   border-radius: 6px !important;
   font-weight: bold;
+  border: 1px solid #689a62;
+  transition: all 0.5s;
+}
+
+.btn-save:hover {
+  background-color: white;
+  color: #31603d;
 }
 
 .close-pop-up {
@@ -361,6 +373,12 @@ textarea {
   .edit-buttons img,
   .control-buttons img {
     width: 30px;
+  }
+}
+
+@media screen and (max-width: 726px) {
+  .timer h1 {
+    font-size: 2rem;
   }
 }
 
