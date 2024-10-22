@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import pause from "../assets/pause.svg";
 import play from "../assets/play.svg";
 import reset from "../assets/reset.svg";
@@ -20,7 +21,7 @@ function App() {
   const [points, setPoints] = useState([]);
 
   let [popTitle, setPopTitle] = useState("");
-  let [talkTitle, setTalkTitle] = useState("");
+  let [isLoggedIn, setLoggedIn] = useState(false);
   let [popContent, setPopContent] = useState("");
   let [verses, setVerses] = useState([]);
 
@@ -152,6 +153,10 @@ function App() {
 
   const handleSave = () => {
     setShowAddTitle(true);
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setLoggedIn(true);
+    }
   };
 
   const closePopup = (e) => {
@@ -345,18 +350,29 @@ function App() {
           {showAddTitle && (
             <div className="addtitle" onClick={closeAddTitle}>
               <div className="add-title-content">
-                <h1>Enter your Talk Title</h1>
-                <div className="add-title-input">
-                  <input type="text" placeholder="title" id="title" />
-                  <button
-                    type="submit"
-                    onClick={() =>
-                      handleAddTalk(document.getElementById("title").value)
-                    }
-                  >
-                    Add
-                  </button>
-                </div>
+                {!isLoggedIn ? (
+                  <>
+                    <h1>Log in To Save Talks.</h1>
+                    <a href="" className="cta-accounts-save">
+                      <Link to="/signup/">Make an Account</Link>
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <h1>Enter your Talk Title</h1>
+                    <div className="add-title-input">
+                      <input type="text" placeholder="title" id="title" />
+                      <button
+                        type="submit"
+                        onClick={() =>
+                          handleAddTalk(document.getElementById("title").value)
+                        }
+                      >
+                        Add
+                      </button>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           )}

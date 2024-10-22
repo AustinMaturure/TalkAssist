@@ -47,13 +47,12 @@ export default function Dashboard() {
                 </li>
               </ul>
             </nav>
-            <h1 className="dash-first-name">{username[0]}</h1>{" "}
           </div>
         </div>
 
         <div className="talks-container">
           <h1>Your Talks</h1>
-          {!data ? (
+          {data === null || data.length === 0 ? (
             <div className="loading-talks"></div>
           ) : (
             <div className="talks">

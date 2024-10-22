@@ -339,6 +339,14 @@ textarea {
   gap: 1rem;
 }
 
+.cta-accounts-save a {
+  padding-top: 120px;
+  color: #31603d;
+}
+.cta-accounts-save a:hover {
+  text-decoration: underline 1px solid #31603d;
+}
+
 .btn-save {
   color: white;
 
