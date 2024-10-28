@@ -249,7 +249,7 @@ function App() {
                     dangerouslySetInnerHTML={{ __html: formatText(points[i]) }}
                   />
                 ) : (
-                  "Enter your talk in the input box to separate thoughts automatically #"
+                  "Enter your talk in the input box to separate thoughts automatically or using #"
                 )}
               </p>
             </div>

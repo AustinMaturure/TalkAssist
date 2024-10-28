@@ -19,6 +19,19 @@ function Tutorial() {
               and hit submit. This will divide your speech into manageable
               points.
             </p>
+
+            <h2>Manually Separating Points</h2>
+            <p>
+              If you'd like to divide points by yourself use " # " to separate
+              them
+            </p>
+            <ul className="codes">
+              e.g
+              <li>
+                {" "}
+                This is Point 1. # This is Point 2. # This is the Last Point.{" "}
+              </li>
+            </ul>
           </div>
 
           <div className="tutorial-step">
