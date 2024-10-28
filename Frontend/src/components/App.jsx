@@ -9,6 +9,7 @@ import add from "../assets/add.svg";
 import edit from "../assets/edit.svg";
 import clear from "../assets/clear.svg";
 import remove from "../assets/remove.svg";
+import rotate from "../assets/rotate.svg";
 import "../css/App.css";
 
 function App() {
@@ -229,6 +230,13 @@ function App() {
   return (
     <>
       <div className="main" id="main">
+        <div className="landscape-hint">
+          <div className="hint-content">
+            <img src={rotate} alt="" />
+            <h1>We Really Recommend you use the tool in landscape mode</h1>
+          </div>
+        </div>
+
         <div className="talk" id="talk">
           <div className="point">
             <div className="point-text-cnt" id="text">
