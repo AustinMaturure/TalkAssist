@@ -236,7 +236,7 @@ function App() {
         <div className="landscape-hint">
           <div className="hint-content">
             <img src={rotate} alt="" />
-            <h1>We Really Recommend you use the tool in landscape mode</h1>
+            <h1>We Really Recommend using the tool in landscape mode</h1>
           </div>
         </div>
 

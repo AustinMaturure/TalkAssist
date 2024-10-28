@@ -223,7 +223,7 @@
 
 .timer h1 {
   margin: 0px;
-  font-size: 3rem;
+  font-size: 5vw;
 }
 
 .timer div {
@@ -442,12 +442,6 @@ textarea {
   .edit-buttons img,
   .control-buttons img {
     width: 30px;
-  }
-}
-
-@media screen and (max-width: 726px) {
-  .timer h1 {
-    font-size: 2rem;
   }
 }
 
