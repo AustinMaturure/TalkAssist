@@ -67,11 +67,14 @@ function App() {
   };
 
   const handleSubmit = async (text) => {
-    setSubmitted(true);
+    setPoints(["Separating Your Text ..."]);
     const dividedText = await divideTextByThoughts(text);
     console.log(dividedText);
-    const newPoints = dividedText.split("#");
+    const newPoints = dividedText
+      .split("#")
+      .filter((point) => point.trim() !== "");
     setPoints(newPoints);
+    setSubmitted(true);
   };
 
   const handleAddTalk = async (title) => {
