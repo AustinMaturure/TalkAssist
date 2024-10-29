@@ -139,24 +139,27 @@
   display: flex;
   flex-direction: column;
   transition: all 2s;
-
+  border-radius: 6px;
   max-height: 100%;
   overflow: auto;
 
-  gap: 0.5rem;
+  gap: 0.2rem;
 }
 
 .pops {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   font-family: "Cabinet";
-  gap: 0.5rem;
+  gap: 0.2rem;
   max-height: calc(70% - 3.5rem);
+  box-sizing: border-box;
+  border-radius: 6px;
 }
 
 .pops-edit {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0.2rem;
 
   max-width: 100%;
@@ -166,13 +169,14 @@
 .control-buttons {
   display: flex;
   background-color: #1d1c1a;
-  padding: 0.5rem;
+
   border-radius: 6px;
 }
 
 .edit-buttons button,
 .control-buttons button {
   background-color: transparent;
+  padding: 0.5rem;
 }
 
 .edit-buttons img,
