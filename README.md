@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f5ab999a-6a7f-4ebe-a0a5-1a9751a5b207/deploy-status)](https://app.netlify.com/sites/talkassist/deploys)
 # TalkAssist
 
 **TalkAssist** is a web application designed to help users organize and manage their talks. The application allows users to input their talk content, automatically divides the content into manageable points, and provides a timer to help with speech delivery. Users can also add and edit key points for easy reference during their talks.
